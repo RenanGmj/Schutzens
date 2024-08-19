@@ -1,9 +1,18 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using ProjetoSZ.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddDbContext<SchutzenDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("EsteticaDatabase")));
+    
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
