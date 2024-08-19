@@ -4073,11 +4073,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\4Gamers\\Desktop\\ProjetoSZ\\ProjetoSZ.csproj",
+      "projectUniqueName": "c:\\Users\\4Gamers\\Desktop\\Projetos\\Schutzens\\ProjetoSZ.csproj",
       "projectName": "ProjetoSZ",
-      "projectPath": "C:\\Users\\4Gamers\\Desktop\\ProjetoSZ\\ProjetoSZ.csproj",
+      "projectPath": "c:\\Users\\4Gamers\\Desktop\\Projetos\\Schutzens\\ProjetoSZ.csproj",
       "packagesPath": "C:\\Users\\4Gamers\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\4Gamers\\Desktop\\ProjetoSZ\\obj\\",
+      "outputPath": "c:\\Users\\4Gamers\\Desktop\\Projetos\\Schutzens\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
