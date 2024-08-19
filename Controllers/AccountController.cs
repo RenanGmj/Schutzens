@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoSZ.Models;
+using ProjetoSZ.Services;
 using System.Threading.Tasks;
-using Schutzens.Services;
 using ProjetoSZ.Models.UIModels;
 
 namespace ProjetoSZ.Controllers
@@ -29,11 +29,12 @@ namespace ProjetoSZ.Controllers
                 var user = await _userService.AuthenticateAsync(model.Email, model.Password);
                 if (user != null)
                 {
-                    // A autenticação foi bem-sucedida
-                    // Adicione uma lógica para criar uma sessão ou um cookie se necessário
+                    // Logar o usuário manualmente, se necessário
+                    // HttpContext.Session.SetString("UserEmail", user.Email); // Exemplo de como você pode salvar dados na sessão
+
                     return RedirectToAction("Index", "Home");
                 }
-                
+
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
             }
 
@@ -51,8 +52,7 @@ namespace ProjetoSZ.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userExists = await _userService.UserExistsAsync(model.Email);
-                if (userExists)
+                if (await _userService.UserExistsAsync(model.Email))
                 {
                     ModelState.AddModelError(string.Empty, "Email already exists.");
                     return View(model);
@@ -63,20 +63,20 @@ namespace ProjetoSZ.Controllers
                     Email = model.Email,
                     Nome = model.Nome,
                     Sobrenome = model.Sobrenome,
-                    DataDeNascimento = model.DataDeNascimento,
-                    Senha = model.Senha
+                    DataDeNascimento = model.DataDeNascimento
                 };
 
                 var result = await _userService.CreateUserAsync(user, model.Senha);
 
                 if (result != null)
                 {
-                    // A criação do usuário foi bem-sucedida
-                    // Adicione uma lógica para criar uma sessão ou um cookie se necessário
+                    // Logar o usuário manualmente, se necessário
+                    // HttpContext.Session.SetString("UserEmail", user.Email); // Exemplo de como você pode salvar dados na sessão
+
                     return RedirectToAction("Index", "Home");
                 }
 
-                ModelState.AddModelError(string.Empty, "Failed to create user.");
+                ModelState.AddModelError(string.Empty, "User creation failed.");
             }
 
             return View(model);

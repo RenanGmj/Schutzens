@@ -274,3 +274,4 @@ C:\Users\4Gamers\Desktop\Projetos\Schutzens\obj\Debug\net8.0\scopedcss\projectbu
 C:\Users\4Gamers\Desktop\Projetos\Schutzens\obj\Debug\net8.0\ProjetoSZ.csproj.Up2Date
 C:\Users\4Gamers\Desktop\Projetos\Schutzens\obj\Debug\net8.0\ProjetoSZ.genruntimeconfig.cache
 C:\Users\4Gamers\Desktop\Projetos\Schutzens\obj\Debug\net8.0\ref\ProjetoSZ.dll
+C:\Users\4Gamers\Desktop\Projetos\Schutzens\bin\Debug\net8.0\BCrypt.Net-Next.dll

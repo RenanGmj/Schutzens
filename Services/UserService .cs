@@ -1,14 +1,19 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
 using ProjetoSZ.Context;
 using ProjetoSZ.Models;
+using System.Threading.Tasks;
 
-namespace Schutzens.Services
+namespace ProjetoSZ.Services
 {
-    public class UserService: IUserService 
+    public interface IUserService
+    {
+        Task<Usuario> CreateUserAsync(Usuario usuario, string senha);
+        Task<Usuario> AuthenticateAsync(string email, string senha);
+        Task<bool> UserExistsAsync(string email);
+    }
+
+    public class UserService : IUserService
     {
         private readonly SchutzenDbContext _context;
 
@@ -19,7 +24,8 @@ namespace Schutzens.Services
 
         public async Task<Usuario> CreateUserAsync(Usuario usuario, string senha)
         {
-            // Lógica para criar usuário (e.g., hash da senha)
+            // Criptografar a senha usando BCrypt
+            usuario.Senha = BCrypt.Net.BCrypt.HashPassword(senha);
             _context.Usuarios.Add(usuario);
             await _context.SaveChangesAsync();
             return usuario;
@@ -27,9 +33,16 @@ namespace Schutzens.Services
 
         public async Task<Usuario> AuthenticateAsync(string email, string senha)
         {
-            // Lógica para autenticar usuário
-            return await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.Email == email && u.Senha == senha);
+            // Buscar o usuário
+            var user = await _context.Usuarios
+                .FirstOrDefaultAsync(u => u.Email == email);
+
+            if (user != null && BCrypt.Net.BCrypt.Verify(senha, user.Senha))
+            {
+                return user;
+            }
+
+            return null;
         }
 
         public async Task<bool> UserExistsAsync(string email)
