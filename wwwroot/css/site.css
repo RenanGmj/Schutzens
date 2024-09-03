@@ -95,6 +95,7 @@ span {                    /*feito para conseguir alterar o display do botão, po
   flex-direction: column;
   justify-content: space-between;
   transition: transform 1s ease-in-out;
+  border: solid;
 }
 
 .subscription__plans:has(.subscription__card:nth-child(1):hover)
