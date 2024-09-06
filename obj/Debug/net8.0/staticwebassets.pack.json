@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\img\\f1_banner.png"
     },
     {
+      "Id": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\wwwroot\\img\\logoNome.png",
+      "PackagePath": "staticwebassets\\img\\logoNome.png"
+    },
+    {
       "Id": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\wwwroot\\img\\poli.jfif",
       "PackagePath": "staticwebassets\\img\\poli.jfif"
     },
