@@ -11,6 +11,7 @@ header[b-xo3kf5ddh1]{
 }
 
 .list-nav[b-xo3kf5ddh1] {
+  
   margin-top: 35px;
   list-style: none;
   display: flex;
@@ -22,6 +23,7 @@ header[b-xo3kf5ddh1]{
 }
 
 .nav-item[b-xo3kf5ddh1] {
+  
   font-weight: 800; /* Deixa o texto mais grosso */
   color: black;
   transition:  0.3s;
