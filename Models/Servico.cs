@@ -15,6 +15,10 @@ namespace ProjetoSZ.Models
     public string Nome { get; set; }
 
     [Required]
+    [MaxLength(500)]
+    public string Descricao { get; set; }
+
+    [Required]
     [Precision(18, 2)] // Define a precisão (18) e a escala (2) para o valor decimal
     public decimal PrecoBase { get; set; }
 

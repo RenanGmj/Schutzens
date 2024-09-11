@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoSZ.Context;
 
@@ -11,9 +12,11 @@ using ProjetoSZ.Context;
 namespace ProjetoSZ.Migrations
 {
     [DbContext(typeof(SchutzenDbContext))]
-    partial class SchutzenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240911131602_AddDescricaoToServico")]
+    partial class AddDescricaoToServico
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -66,9 +69,14 @@ namespace ProjetoSZ.Migrations
                     b.Property<int>("UsuarioID")
                         .HasColumnType("int");
 
+                    b.Property<int>("VeiculoID")
+                        .HasColumnType("int");
+
                     b.HasKey("AgendamentoID");
 
                     b.HasIndex("UsuarioID");
+
+                    b.HasIndex("VeiculoID");
 
                     b.ToTable("Agendamentos");
                 });
@@ -87,23 +95,6 @@ namespace ProjetoSZ.Migrations
                     b.HasKey("ClasseVeiculoID");
 
                     b.ToTable("ClasseVeiculos");
-
-                    b.HasData(
-                        new
-                        {
-                            ClasseVeiculoID = 1,
-                            Nome = "SUV"
-                        },
-                        new
-                        {
-                            ClasseVeiculoID = 2,
-                            Nome = "SEDAN"
-                        },
-                        new
-                        {
-                            ClasseVeiculoID = 3,
-                            Nome = "HATCH"
-                        });
                 });
 
             modelBuilder.Entity("ProjetoSZ.Models.Servico", b =>
@@ -196,6 +187,41 @@ namespace ProjetoSZ.Migrations
                     b.ToTable("Usuarios");
                 });
 
+            modelBuilder.Entity("ProjetoSZ.Models.Veiculo", b =>
+                {
+                    b.Property<int>("VeiculoID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("VeiculoID"));
+
+                    b.Property<int>("ClasseVeiculoID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Cor")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Placa")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("UsuarioID")
+                        .HasColumnType("int");
+
+                    b.HasKey("VeiculoID");
+
+                    b.HasIndex("ClasseVeiculoID");
+
+                    b.HasIndex("UsuarioID");
+
+                    b.ToTable("Veiculos");
+                });
+
             modelBuilder.Entity("AgendamentoServico", b =>
                 {
                     b.HasOne("ProjetoSZ.Models.Agendamento", null)
@@ -234,10 +260,49 @@ namespace ProjetoSZ.Migrations
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 
+                    b.HasOne("ProjetoSZ.Models.Veiculo", "Veiculo")
+                        .WithMany("Agendamentos")
+                        .HasForeignKey("VeiculoID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Usuario");
+
+                    b.Navigation("Veiculo");
+                });
+
+            modelBuilder.Entity("ProjetoSZ.Models.Veiculo", b =>
+                {
+                    b.HasOne("ProjetoSZ.Models.ClasseVeiculo", "ClasseVeiculo")
+                        .WithMany("Veiculos")
+                        .HasForeignKey("ClasseVeiculoID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("ProjetoSZ.Models.Usuario", "Usuario")
+                        .WithMany("Veiculos")
+                        .HasForeignKey("UsuarioID")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("ClasseVeiculo");
+
                     b.Navigation("Usuario");
                 });
 
+            modelBuilder.Entity("ProjetoSZ.Models.ClasseVeiculo", b =>
+                {
+                    b.Navigation("Veiculos");
+                });
+
             modelBuilder.Entity("ProjetoSZ.Models.Usuario", b =>
+                {
+                    b.Navigation("Agendamentos");
+
+                    b.Navigation("Veiculos");
+                });
+
+            modelBuilder.Entity("ProjetoSZ.Models.Veiculo", b =>
                 {
                     b.Navigation("Agendamentos");
                 });

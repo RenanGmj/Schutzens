@@ -27,8 +27,6 @@ namespace ProjetoSZ.Models
         [Required]
         public string Senha { get; set; }
 
-        // Relacionamento com Veiculos
-        public virtual ICollection<Veiculo> Veiculos { get; set; }
 
         // Relacionamento com Agendamentos
         public virtual ICollection<Agendamento> Agendamentos { get; set; }

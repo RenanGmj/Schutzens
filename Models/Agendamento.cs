@@ -22,41 +22,10 @@ namespace ProjetoSZ.Models
     [ForeignKey("UsuarioID")]
     public virtual Usuario Usuario { get; set; }
 
-    // Chave estrangeira para Veiculo
-    [Required]
-    public int VeiculoID { get; set; }
-
-    // Propriedade de navegação
-    [ForeignKey("VeiculoID")]
-    public virtual Veiculo Veiculo { get; set; }
 
     // Relacionamento com Servicos
     public virtual ICollection<Servico> Servicos { get; set; }
 
-    public decimal CalcularPrecoTotal()
-    {
-        decimal precoTotal = 0.0m;
-
-        foreach (var servico in Servicos)
-        {
-            var classeVeiculo = Veiculo.ClasseVeiculo;
-            decimal precoAjustado = servico.PrecoBase;
-
-            // Lógica para ajustar o preço baseado na classe do veículo
-            // Por exemplo, você pode ter uma lógica de multiplicador baseado na classe do veículo
-            if (classeVeiculo.Nome == "SUV")
-            {
-                precoAjustado *= 1.2m; // Ajuste de 20% para SUVs
-            }
-            else if (classeVeiculo.Nome == "Sedan")
-            {
-                precoAjustado *= 1.1m; // Ajuste de 10% para Sedans
-            }
-
-            precoTotal += precoAjustado;
-        }
-
-        return precoTotal;
-    }
+    
     }
 }

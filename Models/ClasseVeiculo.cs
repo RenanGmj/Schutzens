@@ -14,6 +14,6 @@ namespace ProjetoSZ.Models
         public virtual ICollection<Servico> Servicos { get; set; }
 
     // Relacionamento com os veículos
-        public virtual ICollection<Veiculo> Veiculos { get; set; }
+        
     }
 }
