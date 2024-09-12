@@ -1,1 +1,13 @@
-<h1>Lista de Serviços</h1>
+@model List<Servico>
+
+<h1 class="mb-4">Lista de Serviços</h1>
+<ul class="list-group">
+    @foreach(var obj in Model)
+    {
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span><strong></strong> @obj.Nome</span>
+            <span><strong></strong> @obj.Descricao</span>
+            <span><strong></strong> R$@obj.PrecoBase</span>
+        </li>
+    }
+</ul>

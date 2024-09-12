@@ -23,7 +23,7 @@ namespace Schutzens.Controllers
         public IActionResult Index()
         {
             List<Servico> objServicoList = _db.Servicos.ToList();
-            return View();
+            return View(objServicoList);
         }
 
     }       
