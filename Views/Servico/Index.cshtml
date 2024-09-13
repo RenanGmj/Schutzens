@@ -5,9 +5,16 @@
     @foreach(var obj in Model)
     {
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span><strong></strong> @obj.Nome</span>
-            <span><strong></strong> @obj.Descricao</span>
-            <span><strong></strong> R$@obj.PrecoBase</span>
+            <input type="checkbox" class="service-checkbox" data-price="@obj.PrecoBase" onclick="calculateTotal()">
+            <span class="w-25 text-truncate"><strong></strong> @obj.Nome</span>
+            <span class="w-50 text-truncate"><strong></strong> @obj.Descricao</span>
+            <span class="w-25 text-truncate"><strong></strong> R$@obj.PrecoBase</span>
         </li>
     }
 </ul>
+
+<h3 class="mt-4">Total: R$ <span id="totalPrice">0.00</span></h3>
+
+<script src="~/js/site.js">
+
+</script>

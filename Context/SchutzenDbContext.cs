@@ -59,7 +59,32 @@ namespace ProjetoSZ.Context
                     Nome = "Higienização interna",
                     Descricao = "Limpeza completa do interior do veículo, incluindo estofados e carpetes.",
                     PrecoBase = 200.00m
+                },
+                new Servico{
+                    ServicoID = 5,
+                    Nome = "Detalhamento de Motor",
+                    Descricao = "Limpeza e proteção do compartimento do motor.",
+                    PrecoBase = 350.00m
+                },
+                new Servico{
+                    ServicoID = 6,
+                    Nome = "Polimento de Vidros",
+                    Descricao = "Remoção de riscos e manchas dos vidros.",
+                    PrecoBase = 200.00m
+                },
+                new Servico{
+                    ServicoID = 7,
+                    Nome = "Impermeabilização de Estofados",
+                    Descricao = "Proteção contra líquidos e manchas em tecidos.",
+                    PrecoBase = 500.00m
+                },
+                new Servico{
+                    ServicoID = 8,
+                    Nome = "Remoção de Odor",
+                    Descricao = "Eliminação de odores indesejáveis no interior do veículo.",
+                    PrecoBase = 350.00m
                 }
+                
 
             );
 
