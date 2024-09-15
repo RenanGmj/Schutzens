@@ -4112,19 +4112,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\renan gomes\\.nuget\\packages\\": {}
+    "C:\\Users\\4Gamers\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\ProjetoSZ.csproj",
+      "projectUniqueName": "c:\\Users\\4Gamers\\Desktop\\Projetos\\Schutzens\\ProjetoSZ.csproj",
       "projectName": "ProjetoSZ",
-      "projectPath": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\ProjetoSZ.csproj",
-      "packagesPath": "C:\\Users\\renan gomes\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\obj\\",
+      "projectPath": "c:\\Users\\4Gamers\\Desktop\\Projetos\\Schutzens\\ProjetoSZ.csproj",
+      "packagesPath": "C:\\Users\\4Gamers\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\4Gamers\\Desktop\\Projetos\\Schutzens\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\renan gomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\4Gamers\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4190,16 +4195,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }

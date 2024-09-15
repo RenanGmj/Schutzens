@@ -1,12 +1,10 @@
-@model List<Servico>
-
 <h1 class="mb-4">Lista de Serviços</h1>
 <ul class="list-group">
     @foreach(var obj in Model)
     {
         <li class="list-group-item d-flex justify-content-between align-items-center">
-            <input type="checkbox" class="service-checkbox" data-price="@obj.PrecoBase" onclick="calculateTotal()">
-            <span class="w-25 text-truncate"><strong></strong> @obj.Nome</span>
+            <input type="checkbox" class="service-checkbox" data-id="@obj.ServicoID" data-price="@obj.PrecoBase" onclick="calculateTotal()">
+            <span class="w-25 text-truncate"><strong></strong> @obj.Nome</span>  
             <span class="w-50 text-truncate"><strong></strong> @obj.Descricao</span>
             <span class="w-25 text-truncate"><strong></strong> R$@obj.PrecoBase</span>
         </li>
@@ -15,6 +13,6 @@
 
 <h3 class="mt-4">Total: R$ <span id="totalPrice">0.00</span></h3>
 
-<script src="~/js/site.js">
+<button id="agendarBtn" class="btn btn-primary mt-4">Agendar</button>
 
-</script>
+<script src="~/js/site.js"></script>
