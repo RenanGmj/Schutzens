@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoSZ.Context;
 using ProjetoSZ.Services;
+using Schutzens.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +9,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<SchutzenDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("EsteticaDatabase")));
 
-builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<ProjetoSZ.Services.IUserService, UserService>();
+
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();

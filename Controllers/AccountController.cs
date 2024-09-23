@@ -35,7 +35,7 @@ namespace ProjetoSZ.Controllers
                     return RedirectToAction("Index", "Home");
                 }
 
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                ModelState.AddModelError(string.Empty, "Este login não existe.");
             }
 
             return View(model);
@@ -54,7 +54,7 @@ namespace ProjetoSZ.Controllers
             {
                 if (await _userService.UserExistsAsync(model.Email))
                 {
-                    ModelState.AddModelError(string.Empty, "Email already exists.");
+                    ModelState.AddModelError(string.Empty, "Esse email ja esta sendo utilizado.");
                     return View(model);
                 }
 
@@ -76,7 +76,7 @@ namespace ProjetoSZ.Controllers
                     return RedirectToAction("Index", "Home");
                 }
 
-                ModelState.AddModelError(string.Empty, "User creation failed.");
+                ModelState.AddModelError(string.Empty, "Falha na criação do usuário.");
             }
 
             return View(model);
