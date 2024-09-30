@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoSZ.Context;
 
@@ -11,9 +12,11 @@ using ProjetoSZ.Context;
 namespace ProjetoSZ.Migrations
 {
     [DbContext(typeof(SchutzenDbContext))]
-    partial class SchutzenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240926215851_CriacaoTabelaProdutos")]
+    partial class CriacaoTabelaProdutos
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ProjetoSZ.Context;
 
@@ -11,9 +12,11 @@ using ProjetoSZ.Context;
 namespace ProjetoSZ.Migrations
 {
     [DbContext(typeof(SchutzenDbContext))]
-    partial class SchutzenDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240926181524_sla")]
+    partial class sla
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -252,41 +255,41 @@ namespace ProjetoSZ.Migrations
                         new
                         {
                             ProdutoId = 1,
-                            DescricaoProduto = "O Kit Vonixx oferece produtos essenciais para limpar e proteger o carro, incluindo shampoo, cera e desengraxante, proporcionando brilho e conservação para todas as superfícies.",
-                            ImagemProduto = "~/img/ImgDoProduto1.jpeg",
-                            PrecoProduto = 200.00m,
-                            ProdutoNome = "Kit Vonixx"
+                            DescricaoProduto = "Vonixx Cera Carnauba Tok Final V-Floc Revitalizador de Plasticos intense Sintra fast.",
+                            ImagemProduto = "wwwroot/img/produtos/ImgDoProduto1.jpeg",
+                            PrecoProduto = 180.00m,
+                            ProdutoNome = "Kit Lavagem Automotiva Completa Vonixx"
                         },
                         new
                         {
                             ProdutoId = 2,
-                            DescricaoProduto = "Renova superfícies plásticas do veículo, removendo sujeiras e protegendo contra raios UV, deixando um acabamento brilhante e conservado.",
-                            ImagemProduto = "~/img/ImgDoProduto2.jpeg",
-                            PrecoProduto = 90.00m,
-                            ProdutoNome = "Kit Limpa Plástico"
+                            DescricaoProduto = "O Kit Limpa Plástico renova superfícies plásticas do veículo, removendo sujeiras e protegendo contra raios UV, deixando um acabamento brilhante e conservado.",
+                            ImagemProduto = "wwwroot/img/produtos/ImgDoProduto2.jpeg",
+                            PrecoProduto = 100.00m,
+                            ProdutoNome = "Kit Limpa plástico"
                         },
                         new
                         {
                             ProdutoId = 3,
-                            DescricaoProduto = "Limpador concentrado de alta performance, desenvolvido para remover sujeiras pesadas em estofados, carpetes e superfícies internas do veículo.",
-                            ImagemProduto = "~/img/ImgDoProduto3.jpeg",
-                            PrecoProduto = 120.00m,
+                            DescricaoProduto = "limpador concentrado de alta performance, desenvolvido para remover sujeiras pesadas em estofados, carpetes e superfícies internas do veículo.",
+                            ImagemProduto = "wwwroot/img/produtos/ImgDoProduto3.jpeg",
+                            PrecoProduto = 66.00m,
                             ProdutoNome = "Vonixx Sintra"
                         },
                         new
                         {
                             ProdutoId = 4,
-                            DescricaoProduto = "Cera de carnaúba premium usada para proteção e brilho de alta qualidade em pinturas automotivas.",
-                            ImagemProduto = "~/img/ImgDoProduto4.jpeg",
-                            PrecoProduto = 80.00m,
+                            DescricaoProduto = "cera de carnaúba premium usada para proteção e brilho de alta qualidade em pinturas automotivas.",
+                            ImagemProduto = "wwwroot/img/produtos/ImgDoProduto4.jpeg",
+                            PrecoProduto = 150.00m,
                             ProdutoNome = "GH-Wax Pure"
                         },
                         new
                         {
                             ProdutoId = 5,
-                            DescricaoProduto = "Revitalizador de plásticos que recupera e renova superfícies plásticas automotivas desgastadas pelo tempo.",
-                            ImagemProduto = "~/img/ImgDoProduto5.jpeg",
-                            PrecoProduto = 70.00m,
+                            DescricaoProduto = "revitalizador de plásticos que recupera e renova superfícies plásticas automotivas desgastadas pelo tempo.",
+                            ImagemProduto = "wwwroot/img/produtos/ImgDoProduto5.jpeg",
+                            PrecoProduto = 67.00m,
                             ProdutoNome = "Vonixx Restaurax"
                         });
                 });
