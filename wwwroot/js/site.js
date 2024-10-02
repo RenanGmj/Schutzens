@@ -35,3 +35,19 @@ document.getElementById('agendarButton').addEventListener('click', function() {
         document.getElementById('successMessage').style.display = 'none';
     }, 3000);
 });
+
+
+ function revealSteps() {
+        const steps = document.querySelectorAll('.step');
+        steps.forEach(step => {
+            const windowHeight = window.innerHeight;
+            const elementTop = step.getBoundingClientRect().top;
+            const revealPoint = 150; // Ajuste para o momento que a animação começa
+
+            if (elementTop < windowHeight - revealPoint) {
+                step.classList.add('show'); // Adiciona a classe "show" para iniciar a animação
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealSteps);

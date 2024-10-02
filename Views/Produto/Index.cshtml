@@ -1,14 +1,21 @@
 @model IEnumerable<Schutzens.Models.Produto>
 
-<div class="container">
+<div class="container py-5">
     <div class="row">
-        @foreach(var item in Model){
-            <div  class="col-sm-4 col-md-4 col-lg-4">
-                <p><img src="@Url.Content(@item.ImagemProduto)" alt="" class="img-fluid" width="500px" height="800px"></p>
-                <h4>@item.ProdutoNome</h4>
-                <p>@item.DescricaoProduto</p>
-                <h3> @item.PrecoProduto.ToString("c")</h3>
+        @foreach(var item in Model)
+        {
+            <div class="col-sm-6 col-md-4 col-lg-3 mb-4">
+                <div class="card border-dark h-100">
+                    <div class="image-container">
+                        <img src="@Url.Content(@item.ImagemProduto)" alt="@item.ProdutoNome" class="card-img-top img-fluid">
+                    </div>
+                    <div class="card-body">
+                        <h4 class="card-title">@item.ProdutoNome</h4>
+                        <p class="card-text">@item.DescricaoProduto</p>
+                        <h3 class="card-price">@item.PrecoProduto.ToString("c")</h3>
+                    </div>
+                </div>
             </div>
         }
     </div>
-</div>        
+</div>

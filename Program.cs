@@ -10,9 +10,13 @@ builder.Services.AddDbContext<SchutzenDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("EsteticaDatabase")));
 
 builder.Services.AddScoped<ProjetoSZ.Services.IUserService, UserService>();
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession();
 
 var app = builder.Build();
 
@@ -27,7 +31,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
+app.UseSession();
 app.UseAuthorization();
 
 app.MapControllerRoute(

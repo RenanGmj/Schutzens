@@ -20,6 +20,7 @@ namespace ProjetoSZ.Context
         public DbSet<Servico> Servicos { get; set; }
         public DbSet<Agendamento> Agendamentos { get; set; }
         public DbSet<Produto> Produtos { get; set; }
+        public DbSet<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

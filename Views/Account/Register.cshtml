@@ -7,47 +7,55 @@
 @{
     Layout = null;
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/register.css" asp-append-version="true" />
 
-<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 
-<h2>@ViewData["Title"]</h2>
 
-<form asp-action="Register" method="post">
-    <div class="form-group">
-        <label asp-for="Nome" class="control-label"></label>
-        <input asp-for="Nome" class="form-control" />
-        <span asp-validation-for="Nome" class="text-danger"></span>
+<div class="container py-5 d-flex justify-content-center">
+    <div class="col-md-4">
+        <h2 class="text-center mb-4 font-weight-bold" style="color: #000000;">Registrar</h2>
+
+        <form asp-action="Register" method="post" class="shadow p-4 rounded" style="background-color: #ffc021;">
+            <div class="form-group">
+                <label asp-for="Nome" class="font-weight-bold"></label>
+                <input asp-for="Nome" class="form-control" placeholder="Digite seu nome" />
+                <span asp-validation-for="Nome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Sobrenome" class="font-weight-bold"></label>
+                <input asp-for="Sobrenome" class="form-control" placeholder="Digite seu sobrenome" />
+                <span asp-validation-for="Sobrenome" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="DataDeNascimento" class="control-label font-weight-bold">Data de nascimento</label>
+                <input asp-for="DataDeNascimento" class="form-control" type="date" />
+                <span asp-validation-for="DataDeNascimento" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Email" class="font-weight-bold"></label>
+                <input asp-for="Email" class="form-control" placeholder="Digite seu email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Senha" class="font-weight-bold"></label>
+                <input asp-for="Senha" class="form-control" type="password" placeholder="Digite sua senha" />
+                <span asp-validation-for="Senha" class="text-danger"></span>
+            </div>
+<br>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+            </div>
+        </form>
+
+        <div class="text-center mt-3">
+            <a asp-action="Login" class="font-weight-bold" style="color: #000000;">Já tem uma conta? Faça login.</a>
+        </div>
     </div>
-
-    <div class="form-group">
-        <label asp-for="Sobrenome" class="control-label"></label>
-        <input asp-for="Sobrenome" class="form-control" />
-        <span asp-validation-for="Sobrenome" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="DataDeNascimento" class="control-label">Data de nascimento</label>
-        <input asp-for="DataDeNascimento" class="form-control" type="date" />
-        <span asp-validation-for="DataDeNascimento" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Email" class="control-label"></label>
-        <input asp-for="Email" class="form-control" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-    </div>
-
-    <div class="form-group">
-        <label asp-for="Senha" class="control-label"></label>
-        <input asp-for="Senha" class="form-control" type="password" />
-        <span asp-validation-for="Senha" class="text-danger"></span>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-</form>
-
-<div>
-    <a asp-action="Login">Já tem uma conta? Faça login.</a>
 </div>
 
 @section Scripts {

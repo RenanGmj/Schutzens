@@ -216,3 +216,107 @@ span {                    /*feito para conseguir alterar o display do botão, po
   outline: 2px solid var(--secondary-color);
   transform: scale(1.05);
 }
+
+/* Session diferencial */
+.differential {
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  padding: 20px;
+  border: 2px solid black; /* Bordas pretas */
+  border-radius: 10px;
+  color: black; /* Cor do texto padrão */
+}
+
+.differential:hover {
+  transform: scale(1.05);
+  background-color: black; /* Fundo preto no hover */
+  color: #FFBB12; /* Texto e título com cor #FFBB12 no hover */
+  border-color: black; /* Mantém as bordas pretas */
+}
+
+.differential h4 {
+  transition: color 0.3s ease;
+  color: black; /* Cor do título padrão */
+}
+
+.differential:hover h4 {
+  color: #FFBB12; /* Cor do título no hover */
+}
+
+.differential p {
+  transition: color 0.3s ease;
+  color: black; /* Cor do texto padrão */
+}
+
+.differential:hover p {
+  color: #FFBB12; /* Cor do texto no hover */
+}
+
+/* Como funciona  */
+
+.how-it-works {
+  padding: 50px 0;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre as etapas */
+}
+
+.step {
+  border: 2px solid black; /* Borda padrão */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 220px; /* Largura fixa para manter uniformidade */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #FFD100;
+  color: black;
+}
+
+/* Efeito ao passar o mouse */
+.step:hover {
+  background-color: #FFBB12; /* Fundo com a cor principal no hover */
+  color: black; /* Texto preto */
+  transform: translateY(-10px); /* Eleva o card levemente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.step p {
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.step:hover h3, .step:hover p {
+  color: white; /* Texto branco ao passar o mouse */
+}
+
+.how-it-works h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
