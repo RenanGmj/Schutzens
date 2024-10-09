@@ -16,7 +16,7 @@ namespace Schutzens.Models
         }
 
         public string CarrinhoCompraId { get; set; }
-        public List<CarrinhoCompraItem> CarrinhoCompraItems { get; set; }
+        public List<CarrinhoCompraItem> CarrinhoCompraItens { get; set; }
         public static CarrinhoCompra GetCarrinho(IServiceProvider services){
             ISession session =
                 services.GetRequiredService<IHttpContextAccessor>()?.HttpContext.Session;
@@ -78,10 +78,10 @@ namespace Schutzens.Models
             return quantidadeLocal;
         }
 
-        public List<CarrinhoCompraItem> GetCarrinhoCompraItems()
+        public List<CarrinhoCompraItem> GetCarrinhoCompraItens()
         {
-            return CarrinhoCompraItems ??
-            (CarrinhoCompraItems =
+            return CarrinhoCompraItens ??
+            (CarrinhoCompraItens =
                 _context.CarrinhoCompraItens.Where(c => c.CarrinhoCompraId == CarrinhoCompraId).Include(s => s.Produto).ToList());
         }
 
