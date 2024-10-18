@@ -4117,11 +4117,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\ProjetoSZ.csproj",
+      "projectUniqueName": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\ProjetoSZ.csproj",
       "projectName": "ProjetoSZ",
-      "projectPath": "c:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\ProjetoSZ.csproj",
+      "projectPath": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\ProjetoSZ.csproj",
       "packagesPath": "C:\\Users\\renan gomes\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\obj\\",
+      "outputPath": "C:\\Users\\renan gomes\\Documents\\GitHub\\Schutzens\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\renan gomes\\AppData\\Roaming\\NuGet\\NuGet.Config",
