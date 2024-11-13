@@ -1,0 +1,26 @@
+body{
+    background-color: #FFD100;
+}
+.form-control {
+    border: 2px solid #FFBB12; /* Borda amarela */
+}
+
+.form-control:focus {
+    border-color: #000; /* Borda preta ao focar */
+    box-shadow: 0 0 5px rgba(255, 187, 18, 0.5); /* Sombra ao focar */
+}
+
+.btn-dark {
+    background-color: #FFBB12; /* Cor do botão */
+    color: #000; /* Cor do texto do botão */
+    border: none; /* Remove a borda do botão */
+}
+
+.btn-dark:hover {
+    background-color: #000; /* Cor de fundo ao passar o mouse */
+    color: #FFBB12; /* Cor do texto ao passar o mouse */
+}
+
+.text-info{
+    color: #000;
+}

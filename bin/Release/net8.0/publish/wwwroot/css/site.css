@@ -1,0 +1,322 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.text-info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  gap: 1em;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  line-height: 1.8em;
+}
+
+.sobreNos{
+  color: black;
+  font-weight: 800;
+  font-size: 1em;
+}
+
+.carousel-caption::before{
+  content: "";
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(transparent, rgb(31, 31, 31));
+  position: absolute;
+
+}
+
+body {
+  background-color: #FFD100;
+
+}
+h2{
+  text-align:center;
+  margin:40px;
+  margin-top:80px;
+}
+
+a.login { /*tive q colocar um login para mexer separado o estilo*/
+  display: flow;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+}
+a:hover, a:focus, a:active {
+      text-decoration: none; /* Garante que o sublinhado não apareça ao passar o mouse */
+      color: inherit; /* Mantém a cor inalterada ao passar o mouse ou focar */
+}
+
+.btn-primary {                                  /*botão*/
+  font-weight: 500;
+  padding: 5px 25px 5px 25px;
+  font-size: 20px;
+  border-radius: 0;
+  margin-top: 20px;
+  background-color: #FFBB12;
+  color: black;
+}
+.form-group {
+  font-weight: bold;
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
+.custom-container {             /*o css do layout q tive q alterar o conteiner do bostrap*/
+  max-width: 1200px;
+  margin: 0 auto; 
+  width: 500px;
+}
+span {                    /*feito para conseguir alterar o display do botão, pois estava fixo no cointainner do bostrap e no form*/
+  display:flow;
+  text-align: center;
+}
+
+.subscription__plans {
+  display: flex;
+  justify-content: space-around;
+  gap: 80px;
+  margin: 40px 0;
+  perspective: 2000px;
+  perspective-origin: top;
+}
+
+.subscription__card {
+  background: var(--card-bg-color);
+  padding: 40px 60px;
+  border-radius: 8px;
+  display: flex;
+  min-height: 600px;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 1s ease-in-out;
+  border: solid;
+}
+
+.subscription__plans:has(.subscription__card:nth-child(1):hover)
+  .subscription__card:nth-child(2) {
+  transform: rotateY(-45deg);
+}
+
+.subscription__plans:has(.subscription__card:nth-child(2):hover)
+  .subscription__card:nth-child(1) {
+  transform: rotateY(45deg);
+}
+
+.subscription__description {
+  text-align: left;
+  list-style: none;
+  font-size: 1.25rem;
+  margin-bottom: 14px;
+  padding-left: 14px;
+}
+
+.subscription__price {
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+  color: var(--secondary-color);
+  font-weight: 700;
+}
+
+.subscription__price .text--small {
+  color: var(--text-color);
+}
+
+.subscription__description::marker {
+  content: "+";
+  font-size: 2rem;
+  margin: 0 8px 0 0;
+}
+
+.subscription__plan {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+}
+
+.contents {
+  margin: 100px auto;
+}
+
+.contents__container {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.contents__card {
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid transparent;
+  transition: transform 0.8s, background 0.8s, border 1s;
+}
+
+.contents__card:hover {
+  transform: scale(1.05);
+  border: 2px solid var(--tertiary-color);
+}
+
+.contents__card:hover .contents__image {
+  opacity: 0;
+}
+
+.contents__image {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 2s;
+}
+
+.button {
+  padding: 16px 40px;
+  background-color: var(--tertiary-color);
+  border-radius: 500px;
+  font-weight: 700;
+  color: var(--text-color);
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+.button.button--gradient {
+  background: var(--btn-bg-color-gradient);
+  outline: 3px solid transparent;
+  transition: background 1s, outline 1s, transform 1s;
+  background-size: 250%;
+}
+
+.button.button--gradient:hover {
+  background-color: transparent;
+  background-position: 100%;
+  outline: 2px solid var(--secondary-color);
+  transform: scale(1.05);
+}
+
+/* Session diferencial */
+.differential {
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  padding: 20px;
+  border: 2px solid black; /* Bordas pretas */
+  border-radius: 10px;
+  color: black; /* Cor do texto padrão */
+}
+
+.differential:hover {
+  transform: scale(1.05);
+  background-color: black; /* Fundo preto no hover */
+  color: #FFBB12; /* Texto e título com cor #FFBB12 no hover */
+  border-color: black; /* Mantém as bordas pretas */
+}
+
+.differential h4 {
+  transition: color 0.3s ease;
+  color: black; /* Cor do título padrão */
+}
+
+.differential:hover h4 {
+  color: #FFBB12; /* Cor do título no hover */
+}
+
+.differential p {
+  transition: color 0.3s ease;
+  color: black; /* Cor do texto padrão */
+}
+
+.differential:hover p {
+  color: #FFBB12; /* Cor do texto no hover */
+}
+
+/* Como funciona  */
+
+.how-it-works {
+  padding: 50px 0;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px; /* Espaçamento entre as etapas */
+}
+
+.step {
+  border: 2px solid black; /* Borda padrão */
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 220px; /* Largura fixa para manter uniformidade */
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #FFD100;
+  color: black;
+}
+
+/* Efeito ao passar o mouse */
+.step:hover {
+  background-color: #FFBB12; /* Fundo com a cor principal no hover */
+  color: black; /* Texto preto */
+  transform: translateY(-10px); /* Eleva o card levemente */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa no hover */
+}
+
+.step h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.step p {
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.step:hover h3, .step:hover p {
+  color: white; /* Texto branco ao passar o mouse */
+}
+
+.how-it-works h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

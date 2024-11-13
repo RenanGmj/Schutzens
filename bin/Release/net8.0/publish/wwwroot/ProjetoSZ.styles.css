@@ -1,0 +1,36 @@
+/* _content/ProjetoSZ/Views/Shared/_Layout.cshtml.rz.scp.css */
+header[b-xo3kf5ddh1]{
+  height: 75px;
+}
+
+.cabecalho[b-xo3kf5ddh1] {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around; /* Espaço entre logo e lista de navegação */
+  align-items: center; /* Alinha verticalmente ao centro */
+  vertical-align: middle;
+}
+
+.list-nav[b-xo3kf5ddh1] {
+  
+  margin-top: 35px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end; /* Mantém os itens da lista alinhados à direita */
+  align-items: center;
+  
+  gap: 20px; /* Espaçamento entre os itens */
+}
+
+.nav-item[b-xo3kf5ddh1] {
+  
+  font-weight: 800; /* Deixa o texto mais grosso */
+  color: black;
+  transition:  0.3s;
+}
+
+.nav-item:hover[b-xo3kf5ddh1] {
+  font-size: 1.2em; /* Aumenta o tamanho da fonte no hover */
+  color: aqua;
+}

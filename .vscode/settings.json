@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin\\Release\\net8.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/845af2fc-8e6f-4eb8-b2e8-d5a091ed929b/resourceGroups/Schutzen_group/providers/Microsoft.Web/sites/Schutzen"
+}
